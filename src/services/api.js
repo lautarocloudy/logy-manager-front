@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:4000/api' });
+// const API = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:4000/api' });
+const API = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'logy-manager-back-git-main-lautarocloudys-projects.vercel.app/api' });
 export const clientes = { list: () => API.get('/clientes'), create: (d)=>API.post('/clientes', d), update:(id,d)=>API.put(`/clientes/${id}`, d), remove:(id)=>API.delete(`/clientes/${id}`) };
 export const stock = { list: ()=>API.get('/stock'), create:(d)=>API.post('/stock', d), remove:(id)=>API.delete(`/stock/${id}`) };
 export const comunicaciones = { list: ()=>API.get('/comunicaciones'), create:(d)=>API.post('/comunicaciones', d) };
